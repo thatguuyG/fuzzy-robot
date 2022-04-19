@@ -2,6 +2,7 @@
 
 namespace App\Providers;
 
+use App\Repositories\OrderRepository;
 use App\Services\ITransactionService;
 use App\Services\IOrderService;
 use App\Services\TransactionService;
@@ -20,7 +21,7 @@ class AppServiceProvider extends ServiceProvider
         //
 
         $this->app->bind(ITransactionService::class, TransactionService::class);
-        $this->app->bind(IOrderService::class,OrderService::class);
+        $this->app->bind(IOrderService::class,OrderRepository::class);
 
     }
 

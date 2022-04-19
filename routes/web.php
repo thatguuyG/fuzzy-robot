@@ -19,4 +19,4 @@ Route::get('/', [TransactionsController::class, 'index']);
 
 Route::get('customer/{customerId}', [TransactionsController::class, 'getCustRecord']);
 
-Route::get('orders/{orderId}', [OrdersController::class, 'index']);
+Route::get('orders', [OrdersController::class, 'index']);

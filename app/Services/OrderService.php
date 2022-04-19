@@ -1,12 +1,21 @@
 <?php
 
 namespace App\Services;
-use Illuminate\Support\Facades\DB;
+use App\services\IOrderService;
 
-class OrderService implements IOrderService {
+class OrderService {
 
-    public function index(int $orderId = NULL) {
-        return DB::select("select * from customers WHERE id='$orderId'");
+    protected $order;
+
+    public function __construct(IOrderService $order)
+    {
+        $this->order = $order;
+    }
+
+    public function index()
+    {
+        $order = $this->order->index();
+        return $order;
     }
 
 }

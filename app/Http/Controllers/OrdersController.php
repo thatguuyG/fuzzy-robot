@@ -13,8 +13,8 @@ class OrdersController extends Controller
         $this->orders = $orders;
     }
 
-    public function index($orderId) {
-        $orders = $this->orders->index($orderId);
+    public function index() {
+        $orders = $this->orders->index();
         dd($orders);
     }
 }
